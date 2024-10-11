@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebPhotoshop - Online Bildbearbeitung</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="editor-container">
+    <header class="toolbar">
+      <div class="tool-buttons">
+        <button onclick="activateTool('brush')">Pinsel</button>
+        <button onclick="activateTool('eraser')">Radiergummi</button>
+        <button onclick="activateTool('text')">Text</button>
+        <button onclick="applyFilter('brightness')">Helligkeit</button>
+        <button onclick="applyFilter('contrast')">Kontrast</button>
+        <button onclick="applyFilter('grayscale')">Graustufen</button>
+        <button onclick="applyFilter('sepia')">Sepia</button>
+        <button onclick="applyFilter('blur')">Weichzeichnen</button>
+        <button onclick="applyFilter('invert')">Invertieren</button>
+        <button onclick="clearCanvas()">Leeren</button>
+      </div>
+      <input type="file" id="upload" onchange="loadImage(event)" />
+      <button onclick="saveImage()">Bild speichern</button>
+      <button onclick="saveProject()">Projekt speichern (.webps)</button>
+      <button onclick="loadProject()">Projekt laden</button>
+    </header>
+
+    <div class="canvas-container">
+      <canvas id="editorCanvas" width="800" height="600"></canvas>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
